@@ -144,7 +144,6 @@ public class BinaryTree {
 						root = null;
 						return;
 					}
-					System.out.println("Predecessor is: " + temp.data);
 
 					deleteNode(root.left, temp);
 					root = temp;
@@ -171,24 +170,18 @@ public class BinaryTree {
 			return;
 		}
 
-		System.out.println("hot here 1");
 		// Node has two children
 		if (node.left != null && node.right != null) {
-			System.out.println("hot here 2");
 			// node is right child
-			System.out.println("node parent is:  " + node.parent);
 			if (node.parent.right == node) {
-				System.out.println("hot here 2.1");
 				node.parent.right = node.left;
 				getPredecessor(root, node).right = node.right;
 			}
 			if (node.parent.left == node) {
-				System.out.println("hot here 2.2");
 				node.parent.left = node.left;
 				getPredecessor(root, node).right = node.right;
 			}
 		} else {
-			System.out.println("hot here 3");
 			//node has only left child
 			if (node.left != null) {
 				// node is right child
@@ -198,7 +191,6 @@ public class BinaryTree {
 					node.parent.left = node.left;
 				}
 			} else {
-				System.out.println("hot here 4");
 				//node has only right child
 				if (node.right != null) {
 					if (node.parent.right == node) {
